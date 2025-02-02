@@ -8,6 +8,8 @@ public class Main : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
+    // int gameScore = 0;
+    Texture2D faceTutorial;
 
     public Main()
     {
@@ -26,8 +28,7 @@ public class Main : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-        // TODO: use this.Content to load your game content here
+        faceTutorial = Content.Load<Texture2D>("faceTutorial");
     }
 
     protected override void Update(GameTime gameTime)
@@ -44,7 +45,9 @@ public class Main : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        // TODO: Add your drawing code here
+        _spriteBatch.Begin();
+        _spriteBatch.Draw(faceTutorial, new Vector2(100, 100), Color.White);
+        _spriteBatch.End();
 
         base.Draw(gameTime);
     }

@@ -1,2 +1,2 @@
-﻿using var game = new MonoClicker.Game1();
+﻿using var game = new MonoClicker.Main();
 game.Run();
